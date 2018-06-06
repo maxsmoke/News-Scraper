@@ -1,0 +1,21 @@
+{
+  "name": "News-Scraper",
+  "version": "1.0.0",
+  "description": "Scrapes from a news site and allows the user to leave comments. The comments are saved in a MongoDB.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxsmoke/News-Scraper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxsmoke/News-Scraper/issues"
+  },
+  "homepage": "https://github.com/maxsmoke/News-Scraper#readme"
+}
