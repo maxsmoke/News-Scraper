@@ -1,41 +1,40 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const logger = require("morgan");
-const mongoose = require("mongoose");
-const express = require("express-handlebars");
+const MONGOOSE = require("mongoose");
+const EXPRESS = require("express");
+const BODYPARSER = require("body-parser");
+const LOGGER = require("morgan");
 
-const axios = require("axios");
-const cheerio = require("cheerio");
+//scraping tools
+const AXIOS = require("axios");
+const CHEERIO = require("cheerio");
 
-let db = require("./models");
-let PORT = 3000;
+//database
+let DB = require("./models/index");
 
-let app = express();
+const PORT = 3000;
 
-app.use(logger("dev"));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+//initialize express
+const APP = EXPRESS();
 
-let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/webScrape";
-// mongoose.connect("mongodb://localhost/webScrape");
-mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI);
+//middleware
+APP.use(LOGGER("dev"));
+APP.use(BODYPARSER.urlencoded({ extended: true }));
+APP.use(EXPRESS.static("public"));
 
-app.get("/scrape", (request, response) => {
-  axios.get("http://www.digg.com/").then(resp => {
-    let $ = cerio.load(resp.data);
+MONGOOSE.connect("mongodb://localhost/webScrape");
 
-    //scrap code goes here
-    res.send("Scrapped the news!");
-  });
-});
+APP.use(BODYPARSER.urlencoded({ extended: true }));
+APP.use(BODYPARSER.json());
 
-app.get("/links/:id", (request, response) => {
-  // get an article db code
-});
+const EXPHBS = require("express-handlebars");
 
-app.post("/articles:/:id", (request, response) => {});
+APP.engine("handlebars", EXPHBS({ defaultLayout: "main" }));
+APP.set("view engine", "handlebars");
 
-app.listen(PORT, () => {
-  console.log(`APP running on port ${PORT} !`);
+const ROUTES = require("./controller/newsController.js");
+
+APP.use(ROUTES);
+
+// Start the server
+APP.listen(PORT, () => {
+  console.log(`App running on port ${PORT}!`);
 });
