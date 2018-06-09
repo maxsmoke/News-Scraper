@@ -6,15 +6,16 @@ let ROUTER = EXPRESS.Router();
 const DB = require("../models");
 
 ROUTER.get("/", (request, response) => {
-  console.log("in root");
+  response.render("index");
+});
 
-  // db.Link.find({}).then(dbLink => {
+module.exports = ROUTER;
+
+
+
+  //   response.render("index");
+    // db.Link.find({}).then(dbLink => {
   //   response.json(dbLink);
   //   console.log(dbLink);
 
   // });
-
-});
-
-module.exports = ROUTER;
-  //   response.render("index", { data: dbLink });

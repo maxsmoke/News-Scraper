@@ -35,6 +35,6 @@ const ROUTES = require("./controller/newsController.js");
 APP.use(ROUTES);
 
 // Start the server
-APP.listen(PORT, () => {
+APP.listen(PORT, _ => {
   console.log(`App running on port ${PORT}!`);
 });
