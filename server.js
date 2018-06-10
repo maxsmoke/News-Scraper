@@ -3,9 +3,7 @@ const EXPRESS = require("express");
 const BODYPARSER = require("body-parser");
 const LOGGER = require("morgan");
 
-//scraping tools
-const AXIOS = require("axios");
-const CHEERIO = require("cheerio");
+
 
 //database
 let DB = require("./models/index");

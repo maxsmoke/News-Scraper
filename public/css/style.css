@@ -1,6 +1,9 @@
 #title{
     /* background: grey; */
     padding-top: 80px;
+    color: white;
+}
+#subtitle{
     padding-bottom: 100px;
     color: white;
 }

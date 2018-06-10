@@ -1,7 +1,12 @@
 $("#scrape").on("click", _ => {
   alert("Load was performed.");
   
-  $.get("/", data => {
-    $(".result").html(data);
+  $.get("/scrape", data => {
+    console.log("dataScraped")
+    // $(".result").html(data);
   });
 });
+
+$.getJSON("/articles", data=>{
+  
+})
