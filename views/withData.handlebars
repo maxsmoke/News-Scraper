@@ -1,14 +1,32 @@
 <div class="container">
-    <h1>TEst render</h1>
+    <div class="nav-wrapper">
+        <nav class="indigo darken-4">
+            <a href="#" class="brand-logo"></a>
+            <ul>
+                <li>
+                    <a>Home</a>
+                </li>
+                <li>
+                    <a>Saved Articles</a>
+                </li>
+                <li>
+                    <button id="scrape" class="waves-effect waves-light btn">Scrape Articles!</button>
+                </li>
+                </U>
+        </nav>
+    </div>
+
+    <h1 class="center indigo" id="title">News Scrapper</h1>
+    <br>
     <div class="row">
         {{#each data}}
-        <div calss="col s12">
-            <div class="card">
+        <div class="col s12">
+            <div class="card indigo lighten-5">
                 <div class="card-content">
-                    <img href"#">
+                    <img href "{{imgLink}}">
                     <span class="card-title">{{title}}</span>
                     <div class="card-action">
-                        <a href="{{link}}">Link</a>
+                        <a href="{{link}}"></a>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
-$("#scrape").on("click", _=>{
-    $.get( "/", data =>  {
-        $( ".result" ).html( data );
-        alert( "Load was performed." );
-      });
+$("#scrape").on("click", _ => {
+  alert("Load was performed.");
+  
+  $.get("/", data => {
+    $(".result").html(data);
+  });
 });
