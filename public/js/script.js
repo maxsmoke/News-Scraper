@@ -1,12 +1,17 @@
-$("#scrape").on("click", _ => {
-  alert("Load was performed.");
-  
-  $.get("/scrape", data => {
-    console.log("dataScraped")
-    // $(".result").html(data);
+$("#scrape").click(_ => {
+  $.ajax({
+    method: "GET",
+    url: "/scrape"
+  }).then(data => {
+    console.log("dataScraped");
   });
 });
 
-$.getJSON("/articles", data=>{
-  
-})
+$("#articles").click(_ => {
+  $.ajax({
+    method: "GET",
+    url: "/articles"
+  }).then(data_ => {
+    location.reload();
+  });
+});

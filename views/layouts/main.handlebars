@@ -12,7 +12,27 @@
 </head>
 
 <body>
-    {{{ body }}} {{!-- Add in jQuery --}}
+    <div class="container">
+        <div class="nav-wrapper">
+            <nav class="indigo darken-4">
+                <a href="#" class="brand-logo"></a>
+                <ul>
+                    <li>
+                        <a>Home</a>
+                    </li>
+                    <li>
+                        <a id="articles">Saved Articles</a>
+                    </li>
+                    <li>
+                        <button id="scrape" class="waves-effect waves-light btn">Scrape Articles!</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        {{{ body }}} {{!-- Add in jQuery --}}
+    </div>
+
+    
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="/js/script.js"></script>
