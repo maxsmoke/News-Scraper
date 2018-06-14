@@ -52,21 +52,6 @@ ROUTER.get("/scrape", (req, res) => {
   });
 });
 
-// Route for grabbing a specific Article by id, populate it with it's note
-ROUTER.get("/articles/:id", function(request, response) {
-  // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
-  DB.Article.findOne({ _id: request.params.id })
-    // ..and populate all of the notes associated with it
-    .populate("note")
-    .then(function(dbArticle) {
-      // If we were able to successfully find an Article with the given id, send it back to the client
-      response.json(dbArticle);
-    })
-    .catch(function(err) {
-      // If an error occurred, send it to the client
-      response.json(err);
-    });
-});
 
 // Route for saving/updating an Article's associated Note
 ROUTER.post("/articles/:id", (request, response) => {
