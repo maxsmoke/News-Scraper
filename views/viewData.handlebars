@@ -1,0 +1,33 @@
+<div class="indigo">
+    <h1 class="center" id="title">News Scraper</h1>
+    <h3 class="center" id="subtitle">Database</h3>
+</div>
+<br>
+<div class="row">
+    {{#each data}}
+    <div class="col s12">
+        <div class="card indigo lighten-5">
+            <div class="card-content">
+                <img href "{{img}}">
+                <span class="card-title">
+                    <h3>{{title}}</h3>
+                    <form>
+                           Comment Title:
+                            <input id='{{_id$}}-title' type="text" name="comment-title">
+                            <br> Comment:
+                            <input id='{{_id$}}-comment' type="text" name="comment-text">
+                        </form>
+                </span>
+                <div class="card-action">
+                    <a href="{{link}}">
+                        <button class="btn amber darken-4">Link</button>
+                    </a>
+                    <button data-id='{{_id}}' class="comment btn waves-effect waves-light amber accent-4">Save Note
+                        <button/>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

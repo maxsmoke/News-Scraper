@@ -1,0 +1,37 @@
+<div class="indigo">
+    <h1 class="center" id="title">News Scraper</h1>
+</div>
+
+<br>
+<div class="row">
+
+    <div class="col s12">
+        <div class="card indigo lighten-5">
+            <div class="card-content">
+                <img href "">
+                <span class="card-title center">{{response}}</span>
+                <div class="card-action">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    {{#each data}}
+    <div class="col s12">
+        <div class="card indigo lighten-5">
+            <div class="card-content">
+                <img href "{{img}}">
+                <span class="card-title">
+                    <h2>{{title}}</h2>
+                </span>
+                <div class="card-action">
+                    <a href="{{link}}">Link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

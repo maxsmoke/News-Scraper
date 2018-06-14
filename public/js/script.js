@@ -1,17 +1,24 @@
-$("#scrape").click(_ => {
-  $.ajax({
-    method: "GET",
-    url: "/scrape"
-  }).then(data => {
-    console.log("dataScraped");
-  });
-});
+//posting a new or updated comment and saving
+$(".comment").click(function() {
+  const thisID = $(this).attr("data-id");
 
-$("#articles").click(_ => {
+  console.log(`#${thisID}-title`);
+
+  const title = $(`#${thisID}-title`).val();
+
+  console.log(title);
+  
+  console.log($(`#${thisID}-comment`).text());
+
   $.ajax({
-    method: "GET",
-    url: "/articles"
-  }).then(data_ => {
-    location.reload();
+    method: "POST",
+    url: `/articles/${thisID}`,
+    data: {
+      title: $(`#${thisID}-title`).val(),
+      body: $(`#${thisID}-comment`).val()
+    }
+  }).then(data => {
+    console.log(data);
+    // $("title-comment").val("Save Complete refresh to see effects");
   });
 });

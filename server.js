@@ -20,7 +20,7 @@ APP.use(EXPRESS.static("public"));
 
 MONGOOSE.connect("mongodb://localhost/webScrape");
 
-APP.use(BODYPARSER.urlencoded({ extended: true }));
+// APP.use(BODYPARSER.urlencoded({ extended: true }));
 APP.use(BODYPARSER.json());
 
 const EXPHBS = require("express-handlebars");
